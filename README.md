@@ -21,6 +21,12 @@ Template Project for 3D Godot Projects designed to be forked for other projects.
 | SteamComponent |![](assets/components/SteamComponentNode.svg)| Base class for any components that need to utilize GodotSteam Addon | Component |
 | ResourceComponent |![](assets/components/ComponentNode.svg)| Experimental component for creating and managing any type of singular resource | Component |
 
+### Globals
+| Global Name | Description |
+| ----------- | ----------- |
+| Discord | Script for Updating Discord Rich Presence |
+| Network | Script for ENET multiplayer |
+
 ### Included Addons
 - [AmbientCG Browser](https://github.com/AzPepoze/godot-ambientcg) by AzPepoze & CSLRDoesntGameDev
 - [DiscordRPC-GD](https://codeberg.org/vaporvee/discord-rpc-godot) by Vaporvee

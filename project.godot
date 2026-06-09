@@ -26,6 +26,7 @@ DiscordRPCLoader="*uid://2dimuwgbiemg"
 AmbientCG="*uid://cnxneyd8ilml2"
 Network="*uid://d1mlvahjd4lhu"
 Discord="*uid://d3w1dv2a7d3re"
+SteamNetwork="*uid://cp2awgvvtxi5a"
 
 [display]
 

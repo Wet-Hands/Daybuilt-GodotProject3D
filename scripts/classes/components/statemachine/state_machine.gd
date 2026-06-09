@@ -1,6 +1,10 @@
 @icon("res://assets/components/StateMachineNode.svg")
 class_name StateMachine
 extends Component
+## Manages States and the transitions between them
+##
+## Designed to be used with [State]
+##
 
 @export var dyn_debug : Container
 

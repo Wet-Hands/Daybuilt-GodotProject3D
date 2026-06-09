@@ -1,6 +1,10 @@
 @icon("res://assets/components/StateNode.svg")
 class_name State
 extends Component
+## Base class for any StateMachine setup
+##
+## Designed to be used with [StateMachine]
+##
 
 var state_machine : StateMachine
 

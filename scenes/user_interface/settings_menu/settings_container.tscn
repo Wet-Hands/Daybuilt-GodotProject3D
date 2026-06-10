@@ -59,7 +59,7 @@ text = "Master:"
 [node name="HSlider" type="HSlider" parent="AudioContainer/HBoxContainer2" unique_id=1540337594]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 4
+size_flags_vertical = 1
 
 [node name="VideoContainer" type="VBoxContainer" parent="." unique_id=1964172982]
 layout_mode = 2

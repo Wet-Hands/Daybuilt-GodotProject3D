@@ -40,6 +40,7 @@ theme_override_constants/margin_bottom = 32
 
 [node name="MainContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1623763363]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 
 [node name="GameTitle" type="Label" parent="PanelContainer/MarginContainer/MainContainer" unique_id=1241069725]
@@ -88,9 +89,10 @@ text = "Credits"
 layout_mode = 2
 text = "Quit"
 
-[node name="SettingsContainer" parent="PanelContainer/MarginContainer" unique_id=1758503230 instance=ExtResource("3_kibp0")]
-visible = false
+[node name="SettingsContainer" parent="PanelContainer/MarginContainer" unique_id=1758503230 node_paths=PackedStringArray("control_container", "main_container") instance=ExtResource("3_kibp0")]
 layout_mode = 2
+control_container = NodePath("../../..")
+main_container = NodePath("../MainContainer")
 
 [node name="CreditsContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=818603665]
 visible = false

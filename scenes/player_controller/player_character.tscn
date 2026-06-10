@@ -16,6 +16,8 @@
 [ext_resource type="Script" uid="uid://jb2bev1wf8xk" path="res://scenes/user_interface/dynamic_debug/dyn_debug.gd" id="12_d8xub"]
 [ext_resource type="Theme" uid="uid://cw8h33xv1acv0" path="res://scenes/user_interface/dynamic_debug/dyn_debug.theme" id="12_vfo37"]
 [ext_resource type="Script" uid="uid://cvettagbosn47" path="res://scripts/classes/components/save_component.gd" id="15_rle0t"]
+[ext_resource type="Script" uid="uid://deue4g7pyxjfe" path="res://scenes/user_interface/pause_menu/pause_container.gd" id="17_2e7vo"]
+[ext_resource type="PackedScene" uid="uid://bphnrscffr1qw" path="res://scenes/user_interface/settings_menu/settings_container.tscn" id="18_qb57j"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sxs1x"]
 
@@ -124,7 +126,8 @@ layout_mode = 2
 layout_mode = 2
 script = ExtResource("12_d8xub")
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer" unique_id=998924696]
+[node name="PauseContainer" type="MarginContainer" parent="CanvasLayer" unique_id=998924696 node_paths=PackedStringArray("player")]
+unique_name_in_owner = true
 visible = false
 anchors_preset = 15
 anchor_right = 1.0
@@ -138,40 +141,50 @@ theme_override_constants/margin_left = 300
 theme_override_constants/margin_top = 128
 theme_override_constants/margin_right = 300
 theme_override_constants/margin_bottom = 128
+script = ExtResource("17_2e7vo")
+player = NodePath("../..")
 
-[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/MarginContainer" unique_id=1115115389]
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/PauseContainer" unique_id=1115115389]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/MarginContainer/PanelContainer" unique_id=1861280741]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/PauseContainer/PanelContainer" unique_id=1861280741]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer" unique_id=821645421]
+[node name="MainContainer" type="VBoxContainer" parent="CanvasLayer/PauseContainer/PanelContainer/MarginContainer" unique_id=821645421]
+unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1091779741]
+[node name="Label" type="Label" parent="CanvasLayer/PauseContainer/PanelContainer/MarginContainer/MainContainer" unique_id=1091779741]
 layout_mode = 2
 theme_override_font_sizes/font_size = 72
 text = "Daybuilt BaseGodotProject3D"
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=2060704302]
+[node name="Label2" type="Label" parent="CanvasLayer/PauseContainer/PanelContainer/MarginContainer/MainContainer" unique_id=2060704302]
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
 text = "Pause Menu"
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=880390491]
+[node name="Resume" type="Button" parent="CanvasLayer/PauseContainer/PanelContainer/MarginContainer/MainContainer" unique_id=880390491]
 layout_mode = 2
 text = "Resume"
 
-[node name="Button2" type="Button" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=299468614]
+[node name="Settings" type="Button" parent="CanvasLayer/PauseContainer/PanelContainer/MarginContainer/MainContainer" unique_id=299468614]
 layout_mode = 2
 text = "Settings"
 
-[node name="Button3" type="Button" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=2016700277]
+[node name="ReturnMenu" type="Button" parent="CanvasLayer/PauseContainer/PanelContainer/MarginContainer/MainContainer" unique_id=2016700277]
 layout_mode = 2
 text = "Return to Main Menu"
 
-[node name="Button4" type="Button" parent="CanvasLayer/MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1680566771]
+[node name="ReturnDesktop" type="Button" parent="CanvasLayer/PauseContainer/PanelContainer/MarginContainer/MainContainer" unique_id=1680566771]
 layout_mode = 2
 text = "Return to Desktop"
+
+[node name="SettingsContainer" parent="CanvasLayer/PauseContainer/PanelContainer/MarginContainer" unique_id=1758503230 node_paths=PackedStringArray("control_container", "main_container") instance=ExtResource("18_qb57j")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+control_container = NodePath("../../..")
+main_container = NodePath("../MainContainer")

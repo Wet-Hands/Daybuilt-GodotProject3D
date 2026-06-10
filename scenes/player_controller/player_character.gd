@@ -11,6 +11,8 @@ extends CharacterBody3D
 var _input_dir : Vector2 = Vector2.ZERO
 var _movement_velocity : Vector3 = Vector3.ZERO
 
+var is_paused : bool = false
+
 var Settings : Node
 
 func _ready() -> void:
@@ -28,7 +30,7 @@ func update_gravity(delta : float) -> void:
 func update_input(speed : float, acceleration : float, deceleration : float) -> void:
 	# If Player presses Pause, Pause Game
 	if Input.is_action_just_pressed("pause"):
-		pass
+		set_pause_container(!is_paused)
 	
 	# If Player Presses Interact, Use InteractionComponent (if it exists)
 	if Input.is_action_just_pressed("interact"):
@@ -57,3 +59,11 @@ func update_input(speed : float, acceleration : float, deceleration : float) -> 
 
 func update_velocity() -> void:
 	move_and_slide()
+
+func set_pause_container(on : bool) -> void:
+		is_paused = on
+		%PauseContainer.visible = is_paused
+		if is_paused:
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		else:
+			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED

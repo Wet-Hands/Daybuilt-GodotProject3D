@@ -38,6 +38,16 @@ window/stretch/mode="viewport"
 
 enabled=PackedStringArray("res://addons/Todo_Manager/plugin.cfg", "res://addons/ambientcg/plugin.cfg", "res://addons/discord-rpc-gd/plugin.cfg", "res://addons/godotsteam/plugin.cfg")
 
+[file_customization]
+
+folder_colors={
+"res://addons/": "red",
+"res://ambientcg/": "red",
+"res://scenes/user_interface/": "green",
+"res://script_templates/": "blue",
+"res://scripts/": "blue"
+}
+
 [input]
 
 move_forward={

@@ -1,5 +1,5 @@
 # Daybuilt GodotProject3D
-[![Godot](https://img.shields.io/badge/Godot-v4.6.3%20-478CBF?logo=godot-engine&logoColor=white)](https://godotengine.org/download/)
+[![Godot](https://img.shields.io/badge/Godot-v4.7%20-478CBF?logo=godot-engine&logoColor=white)](https://godotengine.org/download/)
 [![MIT LICENSE](https://img.shields.io/badge/License-MIT%20-aa0000?logo=MIT&logoColor=white)](LICENSE)
 
 Template Project for 3D Godot Projects designed to be forked for other projects.
